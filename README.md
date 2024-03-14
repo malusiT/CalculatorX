@@ -8,7 +8,7 @@ Responsive Design: The calculator is designed to be responsive and can adapt to 
 
 Clear Button: Users can easily clear the input field to start a new calculation.
 
-Keyboard Support: Basic keyboard support is implemented for users who prefer using keyboard inputs.
+change color: The calculator can change from up to 5 colors for your personal preference.
 
 # Usage
 Enter numbers and perform calculations using the buttons provided.
