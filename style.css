@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    background-color: #00ffff;
+    
+}
+#display{
+    margin: 25px 0px 25px 0px;
+    padding: 10px 0px 10px 0px;
+    width: 500px;
+    height: 20px;
+    background-color: red;
+    border-radius: 2px;
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    color: rgb(18, 21, 54);
+    cursor:text;
+}
+button{
+    width: 125px;
+    height: 125px;
+}
+
+span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#inputs{
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    width: 500px;
+    height: 500px;
+}
