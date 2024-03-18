@@ -1,51 +1,73 @@
 const inputEl = document.querySelectorAll(".input");
 const displayEl = document.getElementById("display");
-const clearEL = document.getElementById("clear");
-
-// Getting the methods inputs
+const clearEl = document.getElementById("clear");
 const sumEl = document.getElementById("sum");
 const subtractEl = document.getElementById("subtract");
 const divEl = document.getElementById("div");
 const multiplyEl = document.getElementById("multiply");
+const equalsEl = document.getElementById("equal");
 
+let num1 = "";
+let num2 = "";
+let operator = "";
 
-const equalsEL = document.getElementById("equal");
-
-
-// Number inputsto the display
-document.addEventListener("click", function(event) {
-    const clickedElement = event.target;
-    
-    if (clickedElement.classList.contains("input")) {
-        const clickedInputValue = clickedElement.value;
+inputEl.forEach(input => {
+    input.addEventListener("click", function(event) {
+        const clickedInputValue = event.target.value;
         displayEl.innerText += clickedInputValue;
-    }
+    });
 });
 
-// Methods of calculation
-sumEl.addEventListener("click", function (){
-    displayEl.innerText += " + ";
+sumEl.addEventListener("click", function() {
+    num1 = parseFloat(displayEl.innerText);
+    operator = "+";
+    displayEl.innerText = "";
+});
 
-})
-subtractEl.addEventListener("click", function (){
-    displayEl.innerText += " - ";
+subtractEl.addEventListener("click", function() {
+    num1 = parseFloat(displayEl.innerText);
+    operator = "-";
+    displayEl.innerText = "";
+});
 
-})
-divEl.addEventListener("click", function (){
-    displayEl.innerText += " / ";
+divEl.addEventListener("click", function() {
+    num1 = parseFloat(displayEl.innerText);
+    operator = "/";
+    displayEl.innerText = "";
+});
 
-})
-multiplyEl.addEventListener("click", function (){
-    displayEl.innerText += " * ";
+multiplyEl.addEventListener("click", function() {
+    num1 = parseFloat(displayEl.innerText);
+    operator = "*";
+    displayEl.innerText = "";
+});
 
-})
-equalsEL.addEventListener("click", function (){
-    displayEl.innerText += "=";
+equalsEl.addEventListener("click", function() {
+    num2 = parseFloat(displayEl.innerText);
+    let result;
+    switch (operator) {
+        case "+":
+            result = num1 + num2;
+            break;
+        case "-":
+            result = num1 - num2;
+            break;
+        case "/":
+            result = num1 / num2;
+            break;
+        case "*":
+            result = num1 * num2;
+            break;
+        default:
+            result = "Invalid Operation";
+            break;
+    }
+    displayEl.innerText = result;
+});
 
-})
-
-clearEL.addEventListener("click", function() {
-
-    displayEl.innerText = " ";
-
+clearEl.addEventListener("click", function() {
+    displayEl.innerText = "";
+    num1 = "";
+    num2 = "";
+    operator = "";
 });

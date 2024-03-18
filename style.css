@@ -1,38 +1,59 @@
-body{
+body {
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    background-color: #00ffff;
-    
-}
-#display{
-    margin: 25px 0px 25px 0px;
-    padding: 10px 0px 10px 0px;
-    width: 500px;
-    height: 20px;
-    background-color: red;
-    border-radius: 2px;
-    display: flex;
-    flex-direction:row;
-    justify-content:center;
-    color: rgb(18, 21, 54);
-    cursor:text;
-}
-button{
-    width: 125px;
-    height: 125px;
+    background-color: #353333;
+    height: 100vh; /* Ensure full viewport height */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set a fallback font */
 }
 
-span{
+#display {
+    margin: 25px 0;
+    padding: 10px;
+    width: 400px; /* Reduced width for better alignment */
+    height: 40px; /* Increased height for better visibility */
+    background-color: #fff; /* Use a lighter background color */
+    border-radius: 5px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-items: center; /* Center text vertically */
+    justify-content: flex-end; /* Align text to the right */
+    color: #121536; /* Darker text color for better contrast */
 }
-#inputs{
-    display: flex;
-    flex-direction: column;
-    background-color: blue;
-    width: 500px;
-    height: 500px;
+
+button {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5em; /* Increase font size for better readability */
+    margin: 5px;
+    border: none;
+    border-radius: 25%; /* Make buttons circular */
+    background-color: #4CAF50; /* Green button color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+#inputs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 5px; /* Add gap between buttons */
+    background-color: #555; /* Darker background color */
+    height: 380px;
+    width: 400px; /* Adjusted width for better alignment */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#inputs button[value="0"] {
+    grid-column: span 2; /* Span 2 columns for zero button */
+}
+
+#inputs button#equal {
+    grid-row: span 2; /* Span 2 rows for equal button */
 }
