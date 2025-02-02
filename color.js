@@ -21,9 +21,9 @@ function colorChange() {
 
 const button = document.createElement("button");
 button.textContent = "Change colour";
-button.style.width = "500px";
+button.style.width = "420px";
 button.style.height = "62.5px";
-button.style.borderRadius = "15px";
+button.style.borderRadius = "5px";
 document.body.appendChild(button);
 
 button.addEventListener("click", colorChange);
